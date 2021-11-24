@@ -11,7 +11,6 @@ import java.util.Optional;
 
 public interface InventoryRepository extends JpaRepository<Inventory, Long> {
 
-
     @Query( value = "SELECT * FROM inventory p WHERE p.product = :inventory and p.active = TRUE", nativeQuery = true)
     Optional<Inventory> getByProductById(@Param("inventory") String inventory);
 
